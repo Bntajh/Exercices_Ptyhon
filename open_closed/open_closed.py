@@ -1,16 +1,16 @@
-def open_closed(chaine):
+def open_closed(s: str) -> bool:
     temps = []
     ouvrant = "({<['\""
     fermant = ")}>]\"'"
     chaine_correspondance = {')': '(', ']': '[', '}': '{', '>': '<', "'": "'", '"': '"'}
     
-    for char in chaine:
+    for char in s:
         if char == '"':
             if not temps or temps[-1] != '"':
                 temps.append('"')
             else:
                 temps.pop()
-        elif char in ouvrant:
+        elif char in ouvrant:   
             temps.append(char)
         elif char in fermant:
             if not temps or temps[-1] != chaine_correspondance[char]:
@@ -28,9 +28,11 @@ tests = [
     "[(])",   
     "[)",    
     '""',    
-    " ' "'"',    
+    " '\"",    
 ]
 
-for i, test in enumerate(tests, 1):
+test_number = 1
+for test in tests:
     result = open_closed(test)
-    print(f"Test {i}: {test}\tRésultat: {result}")
+    print(f"Test {test_number}: {test}\tRésultat: {result}")
+    test_number += 1
