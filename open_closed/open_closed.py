@@ -19,7 +19,7 @@ def open_closed(s: str) -> bool:
 
     return len(temps) == 0
 
-tests = [
+'''tests = [
     "()",     
     "][",    
     "([])",  
@@ -36,3 +36,4 @@ for test in tests:
     result = open_closed(test)
     print(f"Test {test_number}: {test}\tRésultat: {result}")
     test_number += 1
+'''
