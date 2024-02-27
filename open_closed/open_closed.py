@@ -11,7 +11,7 @@ def open_closed(s: str) -> bool:
             if not temps or temps[-1] != chaine_correspondance[char]:
                 return False
             temps.pop() 
-     
+
     return not temps
 
 
