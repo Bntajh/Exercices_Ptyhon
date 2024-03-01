@@ -4,7 +4,13 @@ def falafel(s: str) -> bool :
     
     for i in range (len(str)/2):
         tab_str1.append(str[i])
+        i+=1
     for j in range (len(str)/2):
-        tab_str2.append(str[i])
+        tab_str2.append(str[j])
+        j+=1
+    
+    print(tab_str1)
     
     return 0
+
+falafel()
