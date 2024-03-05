@@ -1,19 +1,15 @@
-Solution Propose :
-
-j'ai cree une fonction qui prend en paramettre une chaine de caractere 
-
-def yulaw(s: str) -> str:
 
 
-Ensuite j'ai Initialiser une chaîne vide pour stocker le résultat
-    result = ''
+solution Propose: j'ai Cree  une fonction nommée little_boxes qui trie une chaîne de caractères en ordre ASCII. 
+cette fonction va  renvoyer une nouvelle chaîne correspondant à celle reçue en paramètre, en unissant chacun des doublons.
 
 
-j'ai cree une boucle pour parcourir chaque caractere de la chaine 
-   for i in s:
+Utilisation de la fonction sorted() : La fonction sorted() est utiliseé pour trier efficacement tous les caractères de la chaîne en entrée, selon leur valeur ASCII.
 
-dans la boucle j'ai fait une condition dans laquelle je dit si le caractère n'est pas déjà dans le résultat,  il va l'ajouter
-  if i not in result:
-            result += i
+Maintenance  de la Structure : En triant les caractères dans l'ordre ASCII, l'algorithme maintient la structure de la chaîne originale, répondant ainsi à la contrainte des caractères d'origine.
 
+Utilisation de la méthode .join() : Après le tri, la méthode .join() est utilisée pour concaténer les caractères triés dans une nouvelle chaîne de caractères. 
 
+Complexité Temporelle O(n) : L'algorithme a une complexité temporelle linéaire O(n), où n est la longueur de la chaîne reçue. Cela est dû à une seule itération sur la chaîne initiale, sans recours à des boucles imbriquées ou à des opérations coûteuses.
+
+ conclusion:  l'approche  qui a ete adoptée avec la fonction little_boxes satisfait  bien les contraintes du sujet en triant les caractères de manière ordonnée, tout en gardant l'intégrité, et offre une solution efficace  tout en  respectant la complexité .
