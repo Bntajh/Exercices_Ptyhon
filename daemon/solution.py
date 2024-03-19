@@ -15,5 +15,3 @@ def daemon(numbers: List[int], k: int)  -> bool:
         right -= 1
     return True
 
-numbers = [100, 97, 101, 109, 111, 110]
-print(daemon(numbers, 3))
