@@ -1,4 +1,4 @@
-Solution Propose: j'ai Cree  une fonction "daemon" qui vérifie si un élément spécifique d'une liste est plus grand que tous les éléments à sa gauche et plus petit que tous les éléments à sa droite.
+Solution Propose: j'ai crée  une fonction "daemon" qui vérifie si un élément spécifique d'une liste est plus grand que tous les éléments à sa gauche et plus petit que tous les éléments à sa droite.
 
 Utilisation de la fonction : Pour verifiér qui la fonction marche, elle doit parcourir la liste "numbers" deux fois: une fois de gauche à droite jusqu'à l'index "k", et une autre de droite à gauche jusqu'à l'index "k". Si aucun élément ne contrevient à la règle pendant les deux parcours, alors l'élément ciblé est bien un "daemon" et la fonction renvoie "True", sinon elle renvoie "False".
 
