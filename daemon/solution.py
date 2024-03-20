@@ -1,17 +1,20 @@
 from typing import List
 
-def daemon(numbers: List[int], k: int)  -> bool:
+def daemon(numbers: List[int], k: int) -> bool:
+    if k < 0 or k >= len(numbers):
+        return False
 
-    left = 0
-    right = len(numbers) - 1
-
-    while  left < k:
-        if numbers [left] > numbers[k]:
-            return False
-        left += 1
-    while  right > k:
-        if numbers[right] < numbers[k]:
-            return False
-        right -= 1
+    for i in range(len(numbers)):
+        if i != k:
+            if k < i and numbers[k] > numbers[i]:
+                return False
+            if k > i and numbers[k] < numbers[i]:
+                return False
     return True
+
+# numbers = [100, 97, 101, 109, 111, 110]
+# k = 3
+# print(daemon(numbers, k))
+
+
 
