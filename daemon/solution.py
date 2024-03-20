@@ -1,24 +1,24 @@
 from typing import List
 
-def daemon(numbers: List[int], k: int) -> bool:
-    if k < 0 or k >= len(numbers):
-        return False
-    
-    if all(num == numbers[k] for num in numbers):
-        return True
+def daemon(numbers: List[int], k: int)  -> bool:
 
-    for i in range(len(numbers)):
-        if i != k:
-            if k < i and numbers[k] > numbers[i]:
-                return False
-            if k > i and numbers[k] < numbers[i]:
-                return False
+    left = 0
+    right = len(numbers) - 1
+
+    while  left < k:
+        if numbers [left] > numbers[k]:
+            return False
+        left += 1
+    while  right > k:
+        if numbers[right] < numbers[k]:
+            return False
+        right -= 1
     return True
 
 
-# numbers = [100, 97, 101, 109, 111, 110]
-# k = 1
-# print(daemon(numbers, k))
+numbers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+k = 42
+print(daemon(numbers, k))
 
 
 
