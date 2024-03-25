@@ -1,6 +1,9 @@
 from typing import List
 
 def do_a_barrel_roll(numbers: List[int], k: int) -> List[int]:
+    if not numbers:
+        return []
+
     n = len(numbers)
     k = k % n 
 
@@ -8,9 +11,10 @@ def do_a_barrel_roll(numbers: List[int], k: int) -> List[int]:
 
     return rotated_array
 
-# arr = [0, 1, 2, 3, 4, 5]
-# k = 3
-# result = do_a_barrel_roll(arr, k)
-# print(result)
+
+arr = [0, 1, 2, 3, 4, 5]
+k = 3
+result = do_a_barrel_roll(arr, k)
+print(result)
 
 
