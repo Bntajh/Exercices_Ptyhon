@@ -11,6 +11,6 @@ def morning_sunshine(numbers: List[int]) -> List[int]:
 
     return result[::-1]
 
-input_numbers = [5, 4, 3, 2, 1]
+'''input_numbers = [5, 4, 3, 2, 1]
 output_result = morning_sunshine(input_numbers)
-print(output_result)
+print(output_result)'''

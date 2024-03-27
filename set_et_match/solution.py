@@ -12,6 +12,6 @@ def set_et_match(numbers: List[int], n: int) -> bool:
     return False
 
 numbers = [1, 2, 3, 4, 5]
-target_sum = 9
+'''target_sum = 9
 result = set_et_match(numbers, target_sum)
-print(result)
+print(result)'''

@@ -13,6 +13,6 @@ def yin_yang(s: str) -> bool:
 
     return not stack 
     
-input_str = "([])"
+'''input_str = "([])"
 result = yin_yang(input_str)
-print(result)
+print(result)'''
