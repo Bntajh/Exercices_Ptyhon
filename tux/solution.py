@@ -27,5 +27,3 @@ def tux(numbers: list[int]) -> int:
             return i
 
     return -1
-
-print(tux([1]))
