@@ -1,4 +1,7 @@
 def tux(numbers: list[int]) -> int:
+    if len(numbers) == 1:
+        return 0
+
     if not numbers:
         return -1
 
@@ -24,3 +27,5 @@ def tux(numbers: list[int]) -> int:
             return i
 
     return -1
+
+print(tux([1]))
