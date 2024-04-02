@@ -1,18 +1,36 @@
 def open_closed(s: str) -> bool:
-    temps = []
     ouvrant = "({<["
-fermant = ")}>]"    
-    chaine_correspondance = {')': '(', ']': '[', '}': '{', '>': '<', "'": "'", '"': '"'}
+    fermant = ")}>]"
+
+    simple_cote = "'"
+    double_cote = '"'
+    count_simple = 0
+    count_double = 0
+    count_ouvrant = 0
+    count_fermant = 0
+
+    if s == "" or len(s) % 2 != 0:
+        return False
 
     for char in s:
         if char in ouvrant:
-            temps.append(char)
+            count_ouvrant += ouvrant.index(char) + 1
         elif char in fermant:
-            if not temps or temps[-1] != chaine_correspondance[char]:
-                return False
-            temps.pop()
+            count_fermant += fermant.index(char) + 1
+        elif char == simple_cote:
+            count_simple += 1
+        elif char == double_cote:
+            count_double += 1 
+        else:
+            return False
 
-    return not temps
+        if count_ouvrant < count_fermant:
+            return False
+
+    if count_ouvrant == count_fermant and count_double % 2 == 0 and count_simple % 2 == 0:
+        return True
+    else:
+        return False
 
 tests = [
     "()",
@@ -20,12 +38,12 @@ tests = [
     "([])",
     "(",
     "(()",
+    "[(])",
     "[)",
     '""',
-    "'\"",
-    "[(])",
+    "'\""
 ]
 
-for test in tests:
-    result = open_closed(test)
-    print(f"result:{test}: {result}")
+#for test in tests:
+ #   result = open_closed(test)
+  #  print(f"result:{test}: {result}")
