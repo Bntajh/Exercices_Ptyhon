@@ -1,0 +1,5 @@
+Solution Propose: j'ai crée  une fonction "playset" pour détecter la présence de caractères en double dans une chaîne de caractères.
+
+Utilisation de la fonction : la fonction "playset" itère à travers chaque caractère de la chaîne de caractères fournie. À chaque itération, elle vérifie si le caractère est déjà présent dans un ensemble "set". Si c'est le cas, cela signifie qu'un caractère en double a été trouvé et la fonction renvoie "True". Sinon, le caractère est ajouté à l'ensemble. Si aucun caractère en double n'est trouvé après avoir parcouru toute la chaîne, la fonction renvoie "False".
+
+Complexité algorithmique: la complexité temporelle de cet algorithme est O(n), où n est la longueur de la chaîne d'entrée "s". Cela signifie que le temps d'exécution de l'algorithme augmente linéairement avec la taille de la chaîne d'entrée.

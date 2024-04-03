@@ -1,47 +1,25 @@
-# Groupe de bouzia_b 1026532
+# Fonction open_closed
 
-Solution Propose:
-def open_closed(s: str) -> bool:
-    temps = []
-    ouvrant = "({<['\""
-    fermant = ")}>]\"'"
-    chaine_correspondance = {')': '(', ']': '[', '}': '{', '>': '<', "'": "'", '"': '"'}
+La fonction `open_closed` prend une chaîne de caractères en paramètre et vérifie si les parenthèses, crochets et guillemets dans la chaîne sont correctement équilibrés. Elle retourne `True` si c'est le cas, sinon elle retourne `False`. La fonction maintient une complexité temporelle en O(n) et une complexité mémoire constante.
 
+## Algorithme
 
-La fonction open_closed prend une chaîne s en entrée et renvoie un booléen (True ou False) 
+1. Initialisation des compteurs : Nous initialisons des compteurs pour les ouvrants et les fermants ainsi que pour les guillemets simples et doubles.
 
-j'ai utilise  temps []  pour stocker les caractères ouvrants rencontrés jusqu'à présent dans la chaîne de caractères.
+2. Parcours de la chaîne : Nous parcourons chaque caractère de la chaîne d'entrée.
 
+3. Mise à jour des compteurs : Nous mettons à jour les compteurs en fonction du caractère rencontré : ouvrant, fermant, guillemet simple ou guillemet double.
 
-ouvrant et fermant sont des chaînes contenant les caractères ouvrants et fermants respectivement.
+4. Vérification de l'équilibre** : À chaque itération, nous vérifions si le nombre de parenthèses ouvrantes est inférieur au nombre de parenthèses fermantes. Si c'est le cas, nous retournons `False`.
 
-chaine_correspondance est un dictionnaire dans lequel j'ai inséré des paires clé-valeur correspondant à chaque caractère fermant avec son caractère ouvrant correspondant.
+5. Vérification finale** : En fin de parcours, nous vérifions si le nombre de parenthèses ouvrantes est égal au nombre de parenthèses fermantes et si le nombre de guillemets simples et doubles est pair. Si toutes ces conditions sont remplies, nous retournons `True`, sinon nous retournons `False`.
 
+ Complexité
 
+Complexité temporelle en O(n)** : La fonction parcourt la chaîne de caractères une seule fois, garantissant une complexité temporelle en O(n), où n est la longueur de la chaîne de caractères.
+  
+- Complexité mémoire constante: La fonction n'utilise pas de mémoire supplémentaire en dehors des compteurs, assurant une complexité mémoire constante.
 
-    for char in s:
-        if char == '"':
-            if not temps or temps[-1] != '"':
-                temps.append('"')
-            else:
-                temps.pop()
-        elif char in ouvrant:
-            temps.append(char)
-        elif char in fermant:
-            if not temps or temps[-1] != chaine_correspondance[char]:
-                return False
-            temps.pop()
+## Conclusion
 
-
-Ensuite j'ai fait une boucle for qui  parcourt chaque caractère de la chaîne s.
-
-Si un guillemet double (") est rencontré, le code vérifie s'il correspond à un guillemet double précédent. Si oui, il le retire de la liste temps; sinon, il l'ajoute.
-
-Si le caractère est un caractère ouvrant, il est ajouté à la liste temps.
-
-Si le caractère est un caractère fermant, le code vérifie s'il correspond au dernier caractère ouvrant dans la liste temps. Si c'est le cas, il le retire de la liste temps; sinon, la fonction renvoie False.
-
-
-  return len(temps) == 0
-
-apres la fin de la boucle la fonction vérifie si la liste temps est vide. Si c'est le cas, cela signifie que tous les caractères ouvrants ont été correctement appariés et fermés, et la fonction renvoie True; sinon, elle renvoie False.
+La fonction `open_closed` offre une solution efficace pour vérifier l'équilibre des parenthèses, crochets et guillemets dans une chaîne de caractères, tout en maintenant une complexité temporelle en O(n) et une complexité mémoire constante.
