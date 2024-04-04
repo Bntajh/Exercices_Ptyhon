@@ -31,7 +31,3 @@ def tux(numbers: list[int]) -> int :
         return longueur_n - 1
     
     return -1
-
-print(tux([100, 97, 101, 109, 111, 110]))
-print(tux([116, 117, 120]))
-print(tux([97, 98, 97, 99, 117, 108, 101]))
