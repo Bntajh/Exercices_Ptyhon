@@ -2,9 +2,10 @@ from typing import List
 
 def daemon(numbers: List[int], k: int) -> bool:
     pivot = numbers[k]
-    left = all(numbers[i] <= pivot for i in range(k))
-    right = all(numbers[i] >= pivot for i in range(k + 1, len(numbers)))
+    left = all(num <= pivot for num in numbers[:k])
+    right = all(num >= pivot for num in numbers[k + 1:])
     return left and right
+
 
 
 
