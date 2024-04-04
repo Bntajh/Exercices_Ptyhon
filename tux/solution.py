@@ -39,5 +39,5 @@ def tux(numbers: list[int]) -> int:
 
 
 
-num = [0, 1, -1]
-print(tux(num))
+# num = [0, 1, -1]
+# print(tux(num))
