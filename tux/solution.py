@@ -1,18 +1,37 @@
-def tux(numbers: list[int]) -> int:
-    if len(numbers) == 1:
-        return 0
+def tux(numbers: list[int]) -> int :
+    longueur_n = len(numbers)
 
-    if not numbers:
+    if longueur_n == 0:
         return -1
+    
+    max_gauche = [0] * longueur_n
+    min_droite = [0] * longueur_n
+    
 
-    n = len(numbers)
-    min_num = min(numbers)
-    max_num = max(numbers)
+    max_val = numbers[0]
+    for i in range(longueur_n):
+        max_val = max(max_val, numbers[i])
+        max_gauche[i] = max_val
+    
 
-    if max_num - min_num + 1 != n:
+    min_val = numbers[-1]
+    for i in range(longueur_n - 1, -1, -1):
+        min_val = min(min_val, numbers[i])
+        min_droite[i] = min_val
+    
+
+    for i in range(1, longueur_n - 1):
+        if max_gauche[i - 1] < numbers[i] <= min_droite[i + 1]:
+            return i
+    
+
+    if numbers[0] <= min_droite[1]:
         return 0
-    else:
-        for i in range(1, n):
-            if min_num + i != numbers[i]:
-                return i
+    if max_gauche[longueur_n - 2] < numbers[-1]:
+        return longueur_n - 1
+    
     return -1
+
+print(tux([100, 97, 101, 109, 111, 110]))
+print(tux([116, 117, 120]))
+print(tux([97, 98, 97, 99, 117, 108, 101]))
