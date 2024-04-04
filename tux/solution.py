@@ -1,33 +1,40 @@
-def tux(numbers: list[int]) -> int :
+def tux(numbers: list[int]) -> int:
     longueur_n = len(numbers)
 
     if longueur_n == 0:
         return -1
-    
-    max_gauche = [0] * longueur_n
-    min_droite = [0] * longueur_n
-    
 
     max_val = numbers[0]
-    for i in range(longueur_n):
-        max_val = max(max_val, numbers[i])
-        max_gauche[i] = max_val
-    
+    max_index = 0
 
-    min_val = numbers[-1]
-    for i in range(longueur_n - 1, -1, -1):
+    for i in range(1, longueur_n):
+        if numbers[i] > max_val:
+            max_val = numbers[i]
+            max_index = i
+
+    if max_index == 0:
+        if longueur_n > 1 and max_val > numbers[1]:
+            return max_index
+        else:
+            return -1
+
+    if max_index == longueur_n - 1:
+        if max_val > numbers[longueur_n - 2]:
+            return max_index
+        else:
+            return -1
+
+    min_val = max_val
+    for i in range(max_index - 1, -1, -1):
         min_val = min(min_val, numbers[i])
-        min_droite[i] = min_val
-    
 
-    for i in range(1, longueur_n - 1):
-        if max_gauche[i - 1] < numbers[i] <= min_droite[i + 1]:
-            return i
-    
+    if max_val > min_val:
+        return max_index
 
-    if numbers[0] <= min_droite[1]:
-        return 0
-    if max_gauche[longueur_n - 2] < numbers[-1]:
-        return longueur_n - 1
-    
-    return -1
+    min_val = max_val
+    for i in range(max_index + 1, longueur_n):
+        min_val = min(min_val, numbers[i])
+
+    return max_index if max_val > min_val else -1
+
+print(tux([1]))
