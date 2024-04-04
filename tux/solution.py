@@ -4,6 +4,9 @@ def tux(numbers: list[int]) -> int:
     if longueur_n == 0:
         return -1
 
+    if longueur_n == 1:
+        return 0
+
     max_val = numbers[0]
     max_index = 0
 
@@ -35,7 +38,6 @@ def tux(numbers: list[int]) -> int:
     for i in range(max_index + 1, longueur_n):
         min_val = min(min_val, numbers[i])
 
-    if max_index == 0 and max_val == min_val:
-        return -1
-
     return max_index if max_val > min_val else -1
+
+# print(tux([1]))
