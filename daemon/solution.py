@@ -10,9 +10,9 @@ def daemon(numbers: List[int], k: int)  -> bool:
     return True
 
 
-numbers = [100, 97, 101, 109, 111, 110]
-k = 1
-print(daemon(numbers, k))
+# numbers = [100, 97, 101, 109, 111, 110]
+# k = 1
+# print(daemon(numbers, k))
 
 
 
