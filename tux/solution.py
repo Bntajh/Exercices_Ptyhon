@@ -37,4 +37,7 @@ def tux(numbers: list[int]) -> int:
 
     return max_index if max_val > min_val else -1
 
-# print(tux([1, 1]))
+
+
+num = [0, 1, -1]
+print(tux(num))
