@@ -1,15 +1,15 @@
-def daemon(numbers, k):
-    if k < 0 or k >= len(numbers):
-        return False
+from typing import List
 
-    for i in range(len(numbers)):
-        if i < k and numbers[i] >= numbers[k]:
-            return False
+def daemon(numbers: List[int], k: int) -> bool:
+    pivot = numbers[k]
+    left = all(num <= pivot for num in numbers[:k])
+    right = all(num >= pivot for num in numbers[k + 1:])
+    return left and right
 
-        if i > k and numbers[i] < numbers[k]:
-            return False
 
-    return True
+
+
 # numbers = [100, 97, 101, 109, 111, 110]
-# k = 2
-# print(daemon(numbers, k))  
+# k = 3
+# print(daemon(numbers, k))
+
