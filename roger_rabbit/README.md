@@ -29,8 +29,8 @@ b. Boucle Interne (While) :
 
     - La boucle interne itère jusqu'à ce que i devienne 0. À chaque itération, i est divisé par 2, ce qui réduit sa valeur. Cette division répétée par 2 se poursuit jusqu'à ce que i atteigne 0.
 
-    - La boucle interne a une complexité temporelle de O(log i), où i est le nombre actuel dans la boucle principale. La division répétée par 2 réduit logarithmiquement la valeur de i.
+    - Cette boucle itère jusqu'à ce que i devienne 0 en divisant i par 2 à chaque itération. Cela signifie que le temps d'exécution de cette boucle est logarithmique par rapport à i, soit O(log i).
 
-    - Étant donné que cette boucle interne est exécutée pour chaque valeur de i dans la plage de 1 à n, nous devons tenir compte du pire des cas. Le pire des cas serait lorsque i est maximal, c'est-à-dire lorsque i = n. Donc, la complexité temporelle totale due à cette boucle interne est O(log n).
+    - Comme cette boucle interne est exécutée pour chaque valeur de i dans la plage de 1 à n, le pire des cas se produit lorsque i est maximal, c'est-à-dire lorsque i = n. Donc, la complexité temporelle totale due à cette boucle interne est O(log n).
 
-En résumé, la complexité temporelle de la fonction roger_rabbit est dominée par la boucle principale qui est en O(n), et la boucle interne contribue avec une complexité O(log n) à chaque itération de la boucle principale. Ainsi, la complexité totale est O(n log n).
+En résumé, la fonction roger_rabbit a une complexité temporelle de O(n log n), où la boucle principale contribue pour O(n) et la boucle interne pour O(log n) à chaque itération de la boucle principale.
