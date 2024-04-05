@@ -19,6 +19,18 @@ La fonction roger_rabbit prend un entier naturel (n) en paramètre et renvoie un
 
 Complexité de convertion : nous ne pouvons pas utiliser de conversion d'une base vers une autre.
 
-Complexité temporelle en O(n)\*\* : Pour garantir une complexité temporelle en O(n), nous devons nous assurer que le temps d'exécution de l'algorithme est proportionnel à la taille de l'entrée, qui dans ce cas est représentée par le paramètre n. Cela signifie que le temps d'exécution de l'algorithme doit croître linéairement avec n.
+Complexité temporelle :
 
-En résumé, la fonction roger_rabbit génère la représentation binaire de chaque nombre de 1 à n en utilisant une approche itérative sans utiliser de conversion de base.
+a. Boucle Principale (for) :
+
+    - La boucle principale itère de 1 à n. Cela signifie que le nombre d'itérations est proportionnel à n. Cette boucle a une complexité temporelle de O(n).
+
+b. Boucle Interne (While) :
+
+    - La boucle interne itère jusqu'à ce que i devienne 0. À chaque itération, i est divisé par 2, ce qui réduit sa valeur. Cette division répétée par 2 se poursuit jusqu'à ce que i atteigne 0.
+
+    - La boucle interne a une complexité temporelle de O(log i), où i est le nombre actuel dans la boucle principale. La division répétée par 2 réduit logarithmiquement la valeur de i.
+
+    - Étant donné que cette boucle interne est exécutée pour chaque valeur de i dans la plage de 1 à n, nous devons tenir compte du pire des cas. Le pire des cas serait lorsque i est maximal, c'est-à-dire lorsque i = n. Donc, la complexité temporelle totale due à cette boucle interne est O(log n).
+
+En résumé, la complexité temporelle de la fonction roger_rabbit est dominée par la boucle principale qui est en O(n), et la boucle interne contribue avec une complexité O(log n) à chaque itération de la boucle principale. Ainsi, la complexité totale est O(n log n).
